@@ -55,13 +55,20 @@ function matchCards(img1, img2) {
     cardOne = cardTwo = ""; // now reset the cardOne & cardTwo variables to empty strings, so we can use them again
     disableDeck = false;
     return; // end function
+
   }
+  setTimeout(() => {
+    cardOne.classList.add("shake");
+    cardTwo.classList.add("shake");
+  }, 400);
   // these cards didn't match, un-flip them...
-  cardOne.classList.remove("flip");
-  cardTwo.classList.remove("flip");
-  cardOne = cardTwo = ""; // reset the cardOne & cardTwo variables to empty string
-  disableDeck = false;
-  return;
+  setTimeout(() => {
+    cardOne.classList.remove("shake", "flip");
+    cardTwo.classList.remove("shake", "flip");
+    cardOne = cardTwo = ""; // reset the cardOne & cardTwo variables to empty string
+    disableDeck = false;
+    return;
+  }, 1200);
 }
 
 flipCard;
