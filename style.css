@@ -1,25 +1,25 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #6563FF;
-  }
-  
-  .game-board {
-    padding: 25px;
-    border-radius: 10px;
-    background: #F8F8F8;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  }
-  .cards,
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #6563ff;
+}
+
+.game-board {
+  padding: 25px;
+  border-radius: 10px;
+  background: #f8f8f8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.cards,
 .card,
 .view {
   display: flex;
@@ -53,7 +53,7 @@
   background: #fff;
   pointer-events: none;
   backface-visibility: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.25s linear;
 }
 
@@ -63,4 +63,11 @@
 
 .card .back-view img {
   max-width: 45px;
+}
+
+.card.flip .back-view {
+  transform: rotateY(0);
+}
+.card .back-view {
+  transform: rotateY(-180deg);
 }
