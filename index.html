@@ -8,7 +8,13 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="game-board">
+    <div id="welcome">
+      <h1>Hi there, welcome to memory game</h1>
+      <button type="button" id="start" class="button">
+        Start Game<i class="rocket"></i>
+      </button>
+    </div>
+    <div class="game-board hidden">
       <ul class="cards">
         <li class="card">
           <div class="view front-view">
@@ -140,5 +146,6 @@
         </li>
       </ul>
     </div>
+    <div id="end"><p id="message"></p></div>
   </body>
 </html>

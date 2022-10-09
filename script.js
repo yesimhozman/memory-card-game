@@ -2,6 +2,31 @@ const cards = document.querySelectorAll(".card");
 let matchedPairs = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
+const message = document.getElementById('message');
+const cardDiv = document.querySelector(".game-board");
+const welcome = document.getElementById("welcome");
+const end = document.getElementById("end");
+let startTime;
+const start = document.getElementById('start');
+
+
+start.addEventListener('click', startGame);
+function startGame() {
+  console.log("Game started!");
+  startTime = new Date().getTime();
+  cardDiv.classList.remove("hidden");
+  welcome.classList.add("hidden");
+  message.innerHTML = "";
+}
+
+function gameOver() {
+  const elapsedTime = new Date().getTime() - startTime;
+  end.classList.add("winner");
+  message.innerHTML = `<span class="congrats">Congratz!</span><br> <p>You finished in ${elapsedTime / 1000} seconds.</p>`;
+}
+
+
+
 
 function shuffleCards() {
   matchedPairs = 0; // reset matchedPairs variable to 0
@@ -41,13 +66,14 @@ function flipCard(evt) {
 }
 
 function matchCards(img1, img2) {
+
   if (img1 === img2) {
     // this code will run if the card images match
     matchedPairs++; // if the card images match, we can increment the global `matchedPairs` variable by 1 match
     if (matchedPairs == 8) {
+      console.log("you win!");
       // if your number of matches is 8, you've made all the matches! Game Won!
-      console.log("YOU WIN!");
-      return; // for now, lets call this game over, end this function and do nothing else.
+      return gameOver();
     }
     // everything below will execute if the game has not yet been won...
     cardOne.removeEventListener("click", flipCard); // remove the eventlistener so that this matched card cannot be flipped anymore
@@ -70,6 +96,10 @@ function matchCards(img1, img2) {
     return;
   }, 1200);
 }
+
+
+
+
 
 flipCard;
 shuffleCards();

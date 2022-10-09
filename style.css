@@ -13,6 +13,26 @@ body {
   background: #6563ff;
 }
 
+button {
+  display: flex;
+  margin: 0 auto;
+  padding: 20px;
+  border: 0;
+  border-radius: 50px;
+  font-size: 1.6em;
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
+}
+.rocket {
+  display: block;
+  width: 60px;
+  height: 34px;
+  margin-left: 20px;
+  background: url(https://cdn.glitch.com/fe55c52b-f859-4f17-a4c6-1af45426e959%2Frocket.png?v=1620489294028)
+    right center no-repeat;
+  background-size: 60px;
+}
 .game-board {
   padding: 25px;
   border-radius: 10px;
@@ -34,6 +54,9 @@ body {
   justify-content: space-between;
 }
 
+.hidden {
+  display: none;
+}
 .cards .card {
   cursor: pointer;
   list-style: none;
@@ -72,25 +95,25 @@ body {
   transform: rotateY(-180deg);
 }
 
-
 @keyframes shake {
-  0%, 100%{
+  0%,
+  100% {
     transform: translateX(0);
   }
-  20%{
+  20% {
     transform: translateX(-13px);
   }
-  40%{
+  40% {
     transform: translateX(13px);
   }
-  60%{
+  60% {
     transform: translateX(-8px);
   }
-  80%{
+  80% {
     transform: translateX(8px);
   }
 }
-.card.shake{
+.card.shake {
   animation: shake 0.35s ease-in-out;
 }
 
@@ -122,4 +145,9 @@ body {
   .card .back-view img {
     max-width: 35px;
   }
+}
+
+.winner {
+  background: url(https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif)
+    right no-repeat;
 }
