@@ -3,16 +3,23 @@ let matchedPairs = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
 let startTime;
-
+let moves = 0;
 
 const cardDiv = document.querySelector(".game-board");
 const welcome = document.getElementById("welcome");
 const end = document.getElementById("end");
 const start = document.getElementById('start');
 const scoreIconsDiv = document.getElementById("score-icons");
+const countDiv = document.getElementById("count");
 
 start.addEventListener('click', startGame);
+cardDiv.addEventListener('click', countMoves);
 
+function countMoves() {
+  moves ++;
+  console.log(moves);
+  countDiv.innerHTML  = `<p class="moves">Moves: ${moves}</p>`;
+}
 
 function changeScore() {
 
@@ -49,6 +56,7 @@ function gameOver() {
   const elapsedTime = new Date().getTime() - startTime;
   end.innerHTML = `<img src="https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif"><span class="congrats">Congratz! <i class="confeti"></i><br> <p>You finished in ${elapsedTime / 1000} seconds.</p></span> <button id="restart" onclick="restartGame()">Play Again<i class="rocket"></i></button>`;
   cardDiv.classList.add("hidden");
+
 }
 
 function restartGame() {
