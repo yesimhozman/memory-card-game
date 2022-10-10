@@ -2,20 +2,47 @@ const cards = document.querySelectorAll(".card");
 let matchedPairs = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
+let startTime;
+
 
 const cardDiv = document.querySelector(".game-board");
 const welcome = document.getElementById("welcome");
 const end = document.getElementById("end");
-let startTime;
 const start = document.getElementById('start');
 const restart = document.getElementById("restart");
+const scoreIconsDiv = document.getElementById("score-icons");
+
 
 start.addEventListener('click', startGame);
+
+
+function changeScore() {
+
+
+  setTimeout(
+    function() {
+      document.getElementById('prize1').classList.add('gray-scale');
+  
+    }, 50000) //if player cannot complete the game in 50 seconds, the first prize will be grayed out
+    setTimeout(
+      function() {
+        document.getElementById('prize2').classList.add('gray-scale'); 
+    
+      }, 100000); //if player cannot complete the game in 100 seconds, the second prize will be grayed out
+      setTimeout(
+        function() {
+          document.getElementById('prize3').classList.add('gray-scale');
+      
+        }, 150000); //if player cannot complete the game in 150 seconds, the third prize will be grayed out
+}
+
 function startGame() {
   console.log("Game started!");
   startTime = new Date().getTime();
   cardDiv.classList.remove("hidden");
+  scoreIconsDiv.classList.remove("hidden");
   welcome.classList.add("hidden");
+  changeScore();
 
 }
 
@@ -74,6 +101,7 @@ function matchCards(img1, img2) {
     if (matchedPairs == 8) {
       console.log("you win!");
       // if your number of matches is 8, you've made all the matches! Game Won!
+      clearTimeout();
       return gameOver();
     }
     // everything below will execute if the game has not yet been won...
