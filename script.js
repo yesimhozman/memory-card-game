@@ -2,13 +2,13 @@ const cards = document.querySelectorAll(".card");
 let matchedPairs = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
-const message = document.getElementById('message');
+
 const cardDiv = document.querySelector(".game-board");
 const welcome = document.getElementById("welcome");
 const end = document.getElementById("end");
 let startTime;
 const start = document.getElementById('start');
-
+const restart = document.getElementById("restart");
 
 start.addEventListener('click', startGame);
 function startGame() {
@@ -16,13 +16,14 @@ function startGame() {
   startTime = new Date().getTime();
   cardDiv.classList.remove("hidden");
   welcome.classList.add("hidden");
-  message.innerHTML = "";
+
 }
+
 
 function gameOver() {
   const elapsedTime = new Date().getTime() - startTime;
-  end.classList.add("winner");
-  message.innerHTML = `<span class="congrats">Congratz!</span><br> <p>You finished in ${elapsedTime / 1000} seconds.</p>`;
+  end.innerHTML = `<img src="https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif"><span class="congrats">Congratz! <i class="confeti"></i><br> <p>You finished in ${elapsedTime / 1000} seconds.</p></span> <button id="restart">Play Again<i class="rocket"></i></button>`;
+  cardDiv.classList.add("hidden");
 }
 
 

@@ -10,9 +10,14 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #6563ff;
+  background: #e67e22;
+}
+p {
+  font-size: 1.5em;
+  margin: 0.5em;
 }
 
+/*buttons */
 button {
   display: flex;
   margin: 0 auto;
@@ -24,6 +29,13 @@ button {
   cursor: pointer;
   overflow: hidden;
 }
+
+button:hover {
+  background-color: #5f27cd;
+  color: white;
+}
+
+/* icons styling */
 .rocket {
   display: block;
   width: 60px;
@@ -33,6 +45,24 @@ button {
     right center no-repeat;
   background-size: 60px;
 }
+
+.confeti {
+  display: inline-flex;
+  width: 59px;
+  height: 59px;
+  margin-left: 20px;
+  background: url(images/confeti.gif) right center no-repeat;
+  background-size: 60px;
+}
+
+.icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-left: 20px;
+}
+
+/*game board and cards*/
 .game-board {
   padding: 25px;
   border-radius: 10px;
@@ -54,9 +84,6 @@ button {
   justify-content: space-between;
 }
 
-.hidden {
-  display: none;
-}
 .cards .card {
   cursor: pointer;
   list-style: none;
@@ -147,7 +174,35 @@ button {
   }
 }
 
-.winner {
-  background: url(https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif)
-    right no-repeat;
+/*for hiding divs*/
+.hidden {
+  display: none;
+}
+
+/* ending game */
+#end {
+  margin: 1em;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.congrats {
+  font-size: 2em;
+  margin: 1em 0;
+  padding: 12px;
+  border-radius: 9px;
+  text-align: center;
+  background-color: #eabfff;
+}
+
+/*welcome page*/
+.welcoming-text {
+  display: inline-flex;
+  background-color: #5f27cd;
+  align-items: center;
+  border-radius: 9px;
+  color: #fff;
+  margin-bottom: 2em;
+  padding: 12px;
 }
