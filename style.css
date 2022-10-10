@@ -230,3 +230,70 @@ button:hover {
 .gray-scale {
   filter: grayscale(100%);
 }
+
+/*popup*/
+#question {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+
+/* The actual popup */
+.popuptext {
+  visibility: hidden;
+  width: 50%;
+  background-color: #fff;
+  color: #555;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+}
+
+/* Toggle this class - hide and show the popup */
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.score-board-info-list-item {
+  padding: 1em;
+}
+.close {
+  position: absolute;
+  cursor: pointer;
+  right: 4px;
+  bottom: 0px;
+  padding: 0px 10px;
+  color: black;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.close:hover {
+  background-color: #111;
+  color: white;
+}

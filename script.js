@@ -20,20 +20,20 @@ function changeScore() {
 
 
   setTimeout(
-    function() {
+    function () {
       document.getElementById('prize1').classList.add('gray-scale');
-  
+
     }, 50000) //if player cannot complete the game in 50 seconds, the first prize will be grayed out
-    setTimeout(
-      function() {
-        document.getElementById('prize2').classList.add('gray-scale'); 
-    
-      }, 100000); //if player cannot complete the game in 100 seconds, the second prize will be grayed out
-      setTimeout(
-        function() {
-          document.getElementById('prize3').classList.add('gray-scale');
-      
-        }, 150000); //if player cannot complete the game in 150 seconds, the third prize will be grayed out
+  setTimeout(
+    function () {
+      document.getElementById('prize2').classList.add('gray-scale');
+
+    }, 100000); //if player cannot complete the game in 100 seconds, the second prize will be grayed out
+  setTimeout(
+    function () {
+      document.getElementById('prize3').classList.add('gray-scale');
+
+    }, 150000); //if player cannot complete the game in 150 seconds, the third prize will be grayed out
 }
 
 function startGame() {
@@ -126,9 +126,15 @@ function matchCards(img1, img2) {
   }, 1200);
 }
 
-
-
-
-
 flipCard;
 shuffleCards();
+
+function popUp() {
+  let popuptext = document.getElementById("myPopup");
+  popuptext.classList.add("show");
+}
+
+function closepopUp() {
+  let popuptext = document.getElementById("myPopup");
+  popuptext.classList.remove("show");
+}
