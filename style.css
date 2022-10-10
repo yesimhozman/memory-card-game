@@ -181,7 +181,7 @@ button:hover {
 
 /* ending game */
 #end {
-  margin: 1em;
+  margin: 1em 0;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -205,4 +205,28 @@ button:hover {
   color: #fff;
   margin-bottom: 2em;
   padding: 12px;
+}
+
+/*score board*/
+.prize {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+}
+#prize1 {
+  top: 12px;
+  right: 190px;
+}
+
+#prize2 {
+  top: 12px;
+  right: 100px;
+}
+
+#prize3 {
+  top: 12px;
+  right: 12px;
+}
+.gray-scale {
+  filter: grayscale(100%);
 }
