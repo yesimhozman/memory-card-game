@@ -3,6 +3,32 @@ let matchedPairs = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
 
+const cardDiv = document.querySelector(".game-board");
+const welcome = document.getElementById("welcome");
+const end = document.getElementById("end");
+let startTime;
+const start = document.getElementById('start');
+const restart = document.getElementById("restart");
+
+start.addEventListener('click', startGame);
+function startGame() {
+  console.log("Game started!");
+  startTime = new Date().getTime();
+  cardDiv.classList.remove("hidden");
+  welcome.classList.add("hidden");
+
+}
+
+
+function gameOver() {
+  const elapsedTime = new Date().getTime() - startTime;
+  end.innerHTML = `<img src="https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif"><span class="congrats">Congratz! <i class="confeti"></i><br> <p>You finished in ${elapsedTime / 1000} seconds.</p></span> <button id="restart">Play Again<i class="rocket"></i></button>`;
+  cardDiv.classList.add("hidden");
+}
+
+
+
+
 function shuffleCards() {
   matchedPairs = 0; // reset matchedPairs variable to 0
   disableDeck = false; // reset disableDeck boolean to false
@@ -41,13 +67,14 @@ function flipCard(evt) {
 }
 
 function matchCards(img1, img2) {
+
   if (img1 === img2) {
     // this code will run if the card images match
     matchedPairs++; // if the card images match, we can increment the global `matchedPairs` variable by 1 match
     if (matchedPairs == 8) {
+      console.log("you win!");
       // if your number of matches is 8, you've made all the matches! Game Won!
-      console.log("YOU WIN!");
-      return; // for now, lets call this game over, end this function and do nothing else.
+      return gameOver();
     }
     // everything below will execute if the game has not yet been won...
     cardOne.removeEventListener("click", flipCard); // remove the eventlistener so that this matched card cannot be flipped anymore
@@ -70,6 +97,10 @@ function matchCards(img1, img2) {
     return;
   }, 1200);
 }
+
+
+
+
 
 flipCard;
 shuffleCards();

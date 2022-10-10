@@ -8,7 +8,16 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="game-board">
+    <div id="welcome">
+      <div class="welcoming-text">
+        <h1>Hi there, welcome to memory game</h1>
+        <img class="icon" src="images/waving.png" />
+      </div>
+      <button type="button" id="start" class="button">
+        Start Game<i class="rocket"></i>
+      </button>
+    </div>
+    <div class="game-board hidden">
       <ul class="cards">
         <li class="card">
           <div class="view front-view">
@@ -140,5 +149,6 @@
         </li>
       </ul>
     </div>
+    <div id="end"></div>
   </body>
 </html>
