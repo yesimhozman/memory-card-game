@@ -6,12 +6,29 @@
     <title>Memory Card Game</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <div id="score-icons" class="hidden">
-      <img src="images/prize.jpg" alt="prize" id="prize1" class="prize"/>
-      <img src="images/prize.jpg" alt="prize" id="prize2" class="prize"/>
-      <img src="images/prize.jpg" alt="prize" id="prize3" class="prize"/>
+      <img src="images/prize.jpg" alt="prize" id="prize1" class="prize" />
+      <img src="images/prize.jpg" alt="prize" id="prize2" class="prize" />
+      <img src="images/prize.jpg" alt="prize" id="prize3" class="prize" />
+    </div>
+    <button id="question" class="popup" onclick="popUp()">?</button>
+    <div class="popuptext" id="myPopup">
+      <p class="close" onclick="closepopUp()">x</p>
+      <h3>Score Board Rules</h3>
+      <ul>
+        <li class="score-board-info-list-item">
+          If player can complete the game in 50 seconds, receive three prizes
+        </li>
+        <li class="score-board-info-list-item">
+          If player can complete the game in 100 seconds, receive two prizes
+        </li>
+        <li class="score-board-info-list-item">
+          If player can complete the game in 150 seconds, receive one prize
+        </li>
+      </ul>
     </div>
     <div id="welcome">
       <div class="welcoming-text">
