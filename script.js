@@ -16,9 +16,10 @@ start.addEventListener('click', startGame);
 cardDiv.addEventListener('click', countMoves);
 
 function countMoves() {
-  moves ++;
+  moves++;
   console.log(moves);
-  countDiv.innerHTML  = `<p class="moves">Moves: ${moves}</p>`;
+  countDiv.innerHTML = `<p class="moves">Moves: ${moves}</p>`;
+
 }
 
 function changeScore() {
@@ -54,13 +55,13 @@ function startGame() {
 
 function gameOver() {
   const elapsedTime = new Date().getTime() - startTime;
-  end.innerHTML = `<img src="https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif"><span class="congrats">Congratz! <i class="confeti"></i><br> <p>You finished in ${elapsedTime / 1000} seconds.</p></span> <button id="restart" onclick="restartGame()">Play Again<i class="rocket"></i></button>`;
+  end.innerHTML = `<img src="https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif"><span class="congrats">Congratz! <i class="confeti"></i><br> <p>You finished in ${elapsedTime / 1000} seconds with ${moves} moves.</p></span> <button id="restart" onclick="restartGame()">Play Again<i class="rocket"></i></button>`;
   cardDiv.classList.add("hidden");
 
 }
 
 function restartGame() {
- document.location.reload();
+  document.location.reload();
 }
 
 
