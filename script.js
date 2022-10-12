@@ -4,6 +4,7 @@ let cardOne, cardTwo;
 let disableDeck = false;
 let startTime;
 let moves = 0;
+let timerDiv = document.getElementById('timer');
 
 const cardDiv = document.querySelector(".game-board");
 const welcome = document.getElementById("welcome");
@@ -14,6 +15,18 @@ const countDiv = document.getElementById("count");
 
 start.addEventListener('click', startGame);
 cardDiv.addEventListener('click', countMoves);
+
+
+
+function timer() {
+  let sec = 0;
+  timer = setInterval(() => {
+    timerDiv.innerHTML = sec + ' seconds passed';
+    sec++;
+  }, 1000) // each 1 second
+}
+
+
 
 function countMoves() {
   moves++;
@@ -47,7 +60,9 @@ function startGame() {
   startTime = new Date().getTime();
   cardDiv.classList.remove("hidden");
   scoreIconsDiv.classList.remove("hidden");
+  timerDiv.classList.remove("hidden");
   welcome.classList.add("hidden");
+  timer();
   changeScore();
 
 }
@@ -57,6 +72,7 @@ function gameOver() {
   const elapsedTime = new Date().getTime() - startTime;
   end.innerHTML = `<img src="https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif"><span class="congrats">Congratz! <i class="confeti"></i><br> <p>You finished in ${elapsedTime / 1000} seconds with ${moves} moves.</p></span> <button id="restart" onclick="restartGame()">Play Again<i class="rocket"></i></button>`;
   cardDiv.classList.add("hidden");
+  timerDiv.classList.add("hidden");
 
 }
 
