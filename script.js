@@ -37,7 +37,6 @@ function countMoves() {
 
 function changeScore() {
 
-
   setTimeout(
     function () {
       document.getElementById('prize1').classList.add('gray-scale');
@@ -53,8 +52,11 @@ function changeScore() {
       document.getElementById('prize3').classList.add('gray-scale');
 
     }, 150000); //if player cannot complete the game in 150 seconds, the third prize will be grayed out
-}
 
+
+
+
+}
 function startGame() {
   console.log("Game started!");
   startTime = new Date().getTime();
@@ -73,6 +75,8 @@ function gameOver() {
   end.innerHTML = `<img src="https://media.tenor.com/5sR40D64YeAAAAAM/tbbt-the-big-bang-theory.gif"><span class="congrats">Congratz! <i class="confeti"></i><br> <p>You finished in ${elapsedTime / 1000} seconds with ${moves} moves.</p></span> <button id="restart" onclick="restartGame()">Play Again<i class="rocket"></i></button>`;
   cardDiv.classList.add("hidden");
   timerDiv.classList.add("hidden");
+  scoreIconsDiv.classList.add("hidden");
+
 
 }
 
